@@ -15,7 +15,6 @@ if '--help' in sys.argv:
     Коэффициенты A, B, C - целые числа, по модулю не превышающие 10000''')
     sys.exit(0)
 # запрос необходимых данных у пользователя. Обработка недопустимого формата данных.
-
 if len(sys.argv)>=7:
     if sys.argv[2]=='-a' and sys.argv[4]=='-b' and sys.argv[6]=='-c' and len(sys.argv) == 8:
         try:
@@ -23,13 +22,13 @@ if len(sys.argv)>=7:
             b=int(sys.argv[5])
             c=int(sys.argv[7])
             if abs(a)>max_range or abs(b)>max_range or abs(c)>max_range:
-                print('Ошибка: значение вне допустимого диапозона; код возврата 1', file=sys.stderr)
+                print('Ошибка: значение вне допустимого диапазона; код возврата 1', file=sys.stderr)
                 sys.exit(1)
         except ValueError:
             print('Ошибка: коэффицент не является целым числом; код возврата 1', file=sys.stderr)
             sys.exit(1)
     else:
-        print('tutf')
+        print('error unknown cmd')
         sys.exit(1)
 elif 2<len(sys.argv)<7:
     print('', file=sys.stderr)
@@ -37,16 +36,16 @@ else:
     try:
         a=int(input("введите коэффицент а:"))
         if abs(a)>max_range:
-            print('Ошибка: значение вне допустимого диапозона; код возврата 1', file=sys.stderr)
-            sys.exit[1]
+            print('Ошибка: значение вне допустимого диапазона; код возврата 1', file=sys.stderr)
+            sys.exit(1)
         b=int(input("введите коэффицент b:"))
         if abs(b)>max_range:
-             print('Ошибка: значение вне допустимого диапозона; код возврата 1', file=sys.stderr)
-             sys.exit[1]
+             print('Ошибка: значение вне допустимого диапазона; код возврата 1', file=sys.stderr)
+             sys.exit(1)
         c=int(input("введите коэффицент c:"))
         if abs(c)>max_range:
-            print('Ошибка: значение вне допустимого диапозона; код возврата 1', file=sys.stderr)
-            sys.exit[1]
+            print('Ошибка: значение вне допустимого диапазона; код возврата 1', file=sys.stderr)
+            sys.exit(1)
     except ValueError:
             print('Ошибка: коэффицент не является целым числом; код возврата 1', file=sys.stderr)
             sys.exit(1)
@@ -56,7 +55,7 @@ if a==0:
     if b!=0:
         print(f'Линейное уравнение: x={-c//b:3f}')
     else:
-        print('Не уравнение: неизвистного нет; код возврата 1', file=sys.stderr)
+        print('Не уравнение: неизвестного нет; код возврата 1', file=sys.stderr)
         sys.exit(1)
 #квадратное
 else:
